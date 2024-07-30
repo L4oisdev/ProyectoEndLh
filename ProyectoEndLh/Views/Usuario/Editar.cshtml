@@ -1,0 +1,42 @@
+﻿@model ProyectoEndLh.Models.Usuario
+
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h2>Editar Empleado</h2>
+
+        <form asp-controller="Usuario" asp-action="Editar" method="post">
+            <input asp-for="IdUsuario" type="hidden" />
+            <div class="mb-3">
+                <label>Nombre Completo</label>
+                <input class="form-control" type="text" asp-for="NombreUsuario" />
+            </div>
+
+            <div class="mb-3">
+                <label>Correo</label>
+                <input class="form-control" type="text" asp-for="Correo" />
+            </div>
+
+            <div class="mb-3">
+                <label>Contraseña (dejar en blanco para mantener la actual)</label>
+                <input class="form-control" type="password" asp-for="Clave" value="" />
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Guardar</button>
+                <a class="btn btn-warning" asp-controller="Usuario" asp-action="Lista">Volver</a>
+            </div>
+        </form>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>

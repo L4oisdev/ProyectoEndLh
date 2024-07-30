@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<ProyectoEndLh.Models.Usuario>
+
+
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h2>Lista de Usuarios</h2>
+
+        <a class="btn btn-success mb-3" asp-controller="Usuario" asp-action="Nuevo">Crear nuevo</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre Completo</th>
+                    <th>Correo</th>
+                    <th>Contraseña</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdUsuario</td>
+                        <td>@item.NombreUsuario</td>
+                        <td>@item.Correo</td>
+                        <td>******</td>
+                        <td>
+                            <a class="btn btn-secondary"
+                               asp-controller="Usuario"
+                               asp-action="Editar"
+                               asp-route-id="@item.IdUsuario">
+                                Editar
+                            </a>
+
+                            <a class="btn btn-danger"
+                               asp-controller="Usuario"
+                               asp-action="Eliminar"
+                               onclick="return confirmar()"
+                               asp-route-id="@item.IdUsuario">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const confirmar = () => confirm("Esta seguro que deseas eliminar el usuario?")
+    </script>
+}

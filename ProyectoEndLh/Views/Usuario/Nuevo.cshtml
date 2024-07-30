@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model ProyectoEndLh.Models.Usuario;
+
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h2>Nuevo Usuario</h2>
+
+        <form asp-controller="Usuario" asp-action="Nuevo" method="post">
+            <input asp-for="IdUsuario" type="hidden" />
+            <div class="mb-3">
+                <label>Nombre Completo</label>
+                <input class="form-control" type="text" asp-for="NombreUsuario" />
+            </div>
+
+            <div class="mb-3">
+                <label>Correo</label>
+                <input class="form-control" type="text" asp-for="Correo" />
+            </div>
+
+            <div class="mb-3">
+                <label>Contraseña</label>
+                <input class="form-control" type="password" asp-for="Clave" />
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Guardar</button>
+                <a class="btn btn-warning" asp-controller="Usuario" asp-action="Lista">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Sans-serif";
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /*background: #555;*/
+    background-image: url("/img/mask_neon.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos para el contenedor principal */
+.wrapper {
+    width: 420px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    color: #fff;
+    padding: 30px 40px;
+}
+
+.wrapper h1 {
+        font-size: 36px;
+        text-align: center;
+}
+
+/* Estilos para las cajas de entrada */
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box {
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+}
+
+/* Estilos para los campos de entrada */
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+     padding: 0 35px 0 5px;
+}
+
+
+/* Estilos para las etiquetas dentro de las cajas de entrada */
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+/* Estilos para las etiquetas cuando el campo de entrada está enfocado o válido */
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -5px;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+/* Estilos para los botones dentro del contenedor */
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+        text-decoration: underline;
+}
+
+.alert {
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.alert-danger {
+    background-color: #f44336; /* Color de fondo rojo para peligro */
+}
+
+.form-group {
+    margin: 20px 0;
+}

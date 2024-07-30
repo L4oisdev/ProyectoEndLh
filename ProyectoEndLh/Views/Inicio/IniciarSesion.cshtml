@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IniciarSesion</title>
+    <link rel="stylesheet" href="~/css/login.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form asp-controller="Inicio" asp-action="IniciarSesion" method="post">
+            <h1>Iniciar Sesion</h1>
+            <div class="input-box">
+                <input type="email" required name="correo">
+                <label>Correo</label>
+                <i class='bx bxs-envelope'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" required name="clave">
+                <label>Contraseña</label>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+            @if (ViewData["Mensaje"] != null)
+            {
+                <div class="form-group">
+                    <p class="alert alert-danger">
+                        @ViewData["Mensaje"]
+                    </p>
+                </div>
+            }
+            <div class="register-link">
+                <p>¿No tienes una cuenta? <a href="@Url.Action("Registrarse", "Inicio")">Registrarse</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
